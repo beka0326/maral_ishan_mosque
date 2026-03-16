@@ -12,9 +12,9 @@ const translations = {
     header_cta: "Көмек беру",
 
     hero_eyebrow: "Жосалы кенті, Қызылорда облысы",
-    hero_title: "Марал ишан мешітінің құрылысына бірге үлес қосайық",
+    hero_title: "Құрметті отандастар, жомарт жүректі кәсіпкерлер және ағайын-жұрт!",
     hero_text:
-      "Бой көтеріп жатқан жаңа мешіт — елдің рухани қазынасын байытып, жастарды имандылыққа тәрбиелейтін құтты мекен болмақ. Құрылысты табысты аяқтау үшін сіздердің қолдауларыңыз аса қажет.",
+      "",
     hero_cta_main: "Kaspi арқылы көмектесу",
     hero_cta_secondary: "Толығырақ оқу",
 
@@ -96,7 +96,7 @@ const translations = {
     contact_cta: "Қазір көмектесу",
 
     footer_brand: "Марал ишан мешіті",
-    footer_text: "Мешіт құрылысына көмек беру лендингі",
+    footer_text: "Мешіт құрылысына көмек беру",
     footer_top: "Жоғарыға"
   },
 
@@ -202,36 +202,36 @@ const translations = {
   }
 };
 
-const kaspiLink = "https://pay.kaspi.kz/pay/ixvk3h7";
+const kaspiLink = "https://pay.kaspi.kz/pay/ixvk3h7m";
 
-function applyLanguage(lang) {
-  const dict = translations[lang];
-  document.documentElement.lang = lang;
+// function applyLanguage(lang) {
+//   const dict = translations[lang];
+//   document.documentElement.lang = lang;
 
-  document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const key = element.dataset.i18n;
-    if (dict[key]) {
-      element.textContent = dict[key];
-    }
-  });
+//   document.querySelectorAll("[data-i18n]").forEach((element) => {
+//     const key = element.dataset.i18n;
+//     if (dict[key]) {
+//       element.textContent = dict[key];
+//     }
+//   });
 
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.lang === lang);
-  });
+//   document.querySelectorAll(".lang-btn").forEach((btn) => {
+//     btn.classList.toggle("active", btn.dataset.lang === lang);
+//   });
 
-  localStorage.setItem("site_lang", lang);
-}
+//   localStorage.setItem("site_lang", lang);
+// }
 
-function setupLanguageSwitcher() {
-  const saved = localStorage.getItem("site_lang") || "kk";
-  applyLanguage(saved);
+// function setupLanguageSwitcher() {
+//   const saved = localStorage.getItem("site_lang") || "kk";
+//   applyLanguage(saved);
 
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      applyLanguage(btn.dataset.lang);
-    });
-  });
-}
+//   document.querySelectorAll(".lang-btn").forEach((btn) => {
+//     btn.addEventListener("click", () => {
+//       applyLanguage(btn.dataset.lang);
+//     });
+//   });
+// }
 
 function setupMobileMenu() {
   const toggle = document.getElementById("menuToggle");
